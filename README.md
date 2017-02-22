@@ -4,6 +4,12 @@
 
 git2consul takes one or many git repositories and mirrors them into [Consul](http://www.consul.io/) KVs.  The goal is for organizations of any size to use git as the backing store, audit trail, and access control mechanism for configuration changes and Consul as the delivery mechanism.
 
+#### 修改说明（基于v0.12.11）
+- lib/consul/index.js & lib/utils.js
+    1. ignore 'expand_keys', always expand json & properties keys after load as flat content.
+    2. delete keys if file content is empty.
+    3. don't resolve variables in java properties
+
 #### Installation
 
 `npm install -g git2consul`
